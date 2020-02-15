@@ -10,7 +10,7 @@
     "jquery": "^3.4.1",
     "popper.js": "^1.16.0",
     "turbolinks": "^5.2.0",
-    "yarn": "^1.21.1"
+    "yarn": "^1.22.0"
   },
   "version": "0.1.0",
   "devDependencies": {
