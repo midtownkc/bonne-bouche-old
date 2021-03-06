@@ -1,77 +1,83 @@
-<%= form_with(model: recipe, local: true) do |form| %>
-  <% if recipe.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
+<div class='form-row'>
+  <div class='col'>
+  <%= form_with(model: recipe, local: true) do |form| %>
+    <% if recipe.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
 
-      <ul>
-        <% recipe.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% recipe.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group form-row">
+      <%= form.label :title, class: 'col-form-label' %>
+      <%= form.text_field :title, class: 'form-control' %>
+    </div>
+
+    <div class="form-group form-row">
+      <div class="form-group col-md-6">
+        <%= form.label :prep_time_hours, 'Prep Time Hours', class: 'col-form-label' %>
+        <%= form.number_field :prep_time_hours, class: 'form-control' %>
+      </div>
+
+      <div class="form-group col-md-6">
+        <%= form.label :prep_time_minutes, 'Minutes', class: 'col-form-label' %>
+        <%= form.number_field :prep_time_minutes, class: 'form-control' %>
+      </div>
+    </div>
+
+    <div class="form-group form-row">
+      <%= form.label :cook_time_hours, class: 'col-form-label' %>
+      <%= form.number_field :cook_time_hours, class: 'form-control' %>
+    </div>
+
+    <div class="form-group form-row">
+      <%= form.label :cook_time_minutes, class: 'col-form-label' %>
+      <%= form.number_field :cook_time_minutes, class: 'form-control' %>
+    </div>
+
+    <div class="form-group form-row">
+      <%= form.label :serving_size, class: 'col-form-label' %>
+      <%= form.text_field :serving_size, class: 'form-control' %>
+    </div>
+
+    <div class="form-group form-row">
+      <%= form.label :servings, class: 'col-form-label' %>
+      <%= form.text_field :servings, class: 'form-control' %>
+    </div>
+
+    <div class="form-group form-row">
+      <%= form.label :instructions, class: 'col-form-label' %>
+      <%= form.text_area :instructions, class: 'form-control' %>
+    </div>
+
+    <div class="form-group form-row">
+      <%= form.label :instruction_video, class: 'col-form-label' %>
+      <%= form.text_field :instruction_video, class: 'form-control' %>
+    </div>
+
+    <div class="form-group form-row">
+      <%= form.label :style, class: 'col-form-label' %>
+      <%= form.text_field :style, class: 'form-control' %>
+    </div>
+
+    <div class="form-group form-row">
+      <%= form.label :notes, class: 'col-form-label' %>
+      <%= form.text_area :notes, class: 'form-control' %>
+    </div>
+
+    <div class="form-group form-row">
+      <%= form.label :description, class: 'col-form-label' %>
+      <%= form.text_field :description, class: 'form-control' %>
+    </div>
+
+    <div class="form-group form-row">
+      <%= form.submit class: 'btn btn-primary' %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
   </div>
-
-  <div class="field">
-    <%= form.label :prep_time_hours %>
-    <%= form.number_field :prep_time_hours %>
-  </div>
-
-  <div class="field">
-    <%= form.label :prep_time_minutes %>
-    <%= form.number_field :prep_time_minutes %>
-  </div>
-
-  <div class="field">
-    <%= form.label :cook_time_hours %>
-    <%= form.number_field :cook_time_hours %>
-  </div>
-
-  <div class="field">
-    <%= form.label :cook_time_minutes %>
-    <%= form.number_field :cook_time_minutes %>
-  </div>
-
-  <div class="field">
-    <%= form.label :serving_size %>
-    <%= form.text_field :serving_size %>
-  </div>
-
-  <div class="field">
-    <%= form.label :servings %>
-    <%= form.text_field :servings %>
-  </div>
-
-  <div class="field">
-    <%= form.label :instructions %>
-    <%= form.text_area :instructions %>
-  </div>
-
-  <div class="field">
-    <%= form.label :instruction_video %>
-    <%= form.text_field :instruction_video %>
-  </div>
-
-  <div class="field">
-    <%= form.label :style %>
-    <%= form.text_field :style %>
-  </div>
-
-  <div class="field">
-    <%= form.label :notes %>
-    <%= form.text_area :notes %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
