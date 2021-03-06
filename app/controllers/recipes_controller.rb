@@ -17,10 +17,13 @@ class RecipesController < ApplicationController
   # GET /recipes/new
   def new
     @recipe = Recipe.new
+    @recipe.ingredients.build
   end
 
   # GET /recipes/1/edit
-  def edit; end
+  def edit
+    @recipe.ingredients.build
+  end
 
   # POST /recipes
   # POST /recipes.json

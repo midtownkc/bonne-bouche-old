@@ -50,6 +50,14 @@
       <%= form.text_field :servings, class: 'form-control' %>
     </div>
 
+    <div class="field form-group form-row">
+      <%= form.fields_for :ingredients, recipe.ingredients, wrapper: false do |s| %>
+        <%= render partial: 'ingredients', locals: { f: s, parent_f: form } %>
+      <% end %>
+    </div>
+
+    <%= link_to_add_fields "Add Ingredient", form, :ingredients %>
+
     <div class="form-group form-row">
       <%= form.label :instructions, class: 'col-form-label' %>
       <%= form.text_area :instructions, class: 'form-control' %>

@@ -5,3 +5,12 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+grocery_sections = [
+  'Bakery', 'Baking', 'Canned', 'Condiments', 'Cracker', 'Dairy', 'Deli',
+  'Dry Goods', 'Ethnic', 'Frozen', 'Meat', 'Produce', 'Spices'
+]
+
+grocery_sections.each do |section|
+  GrocerySection.create(name: section)
+end
