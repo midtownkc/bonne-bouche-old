@@ -17,7 +17,8 @@ class RecipesController < ApplicationController
   # GET /recipes/new
   def new
     @recipe = Recipe.new
-    @recipe.ingredients.build
+    @recipe.ingredients.new
+    @recipe&.ingredients&.build
   end
 
   # GET /recipes/1/edit
@@ -77,7 +78,8 @@ class RecipesController < ApplicationController
     params.require(:recipe).permit(
       :title, :prep_time_hours, :prep_time_minutes, :cook_time_hours,
       :cook_time_minutes, :serving_size, :servings, :instructions,
-      :instruction_video, :style, :notes, :description
+      :instruction_video, :style, :notes, :description,
+      ingredients_attributes: %i[description grocery_section_id]
     )
   end
 end

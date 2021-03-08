@@ -56,6 +56,12 @@
       <% end %>
     </div>
 
+    <div class="field form-group form-row">
+      <%= form.fields_for :ingredients, recipe.ingredients, wrapper: false do |i| %>
+        <%= render partial: 'ingredient_fields', locals: { f: i, parent_f: form } %>
+      <% end %>
+    </div>
+
     <%= link_to_add_fields "Add Ingredient", form, :ingredients %>
 
     <div class="form-group form-row">
