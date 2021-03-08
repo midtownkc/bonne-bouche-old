@@ -1,0 +1,8 @@
+<% unless parent_f.object.ingredients.count.zero? %>
+  <div class='each_ingredient field form-group form-row'>
+    <%= f.object.description %>
+    <%= f.object&.grocery_section&.name %>
+    <%= f.hidden_field :_destroy %>
+    <%= link_to "Remove Ingredient", 'javascript:void(0)', class: 'remove_fields btn btn-danger' %>
+  </div>
+<% end %>
